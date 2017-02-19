@@ -1,8 +1,8 @@
 import math
-def merge_sort(nums):
+def merge_sort(nums):       ####you dont hv to copy two nums, you can just setup start, end index
     if len(nums) <= 1:
         return nums
-    nums1 = merge_sort(nums[:len(nums) // 2]) #####python 3
+    nums1 = merge_sort(nums[:len(nums) // 2])  ####python3
     nums2 = merge_sort(nums[len(nums) // 2:])
     return merge(nums1, nums2)
 def merge(nums1, nums2):
