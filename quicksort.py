@@ -1,11 +1,16 @@
-def partition(A, p, q):
+def partition(A, p, q, pivot=None):
+    if pivot:
+        A[p], A[pivot] = A[pivot], A[p]
     i = p
+    print(A, p, q, pivot)
     for j in range(p + 1, q):
         if A[j] <= A[p]:
             i += 1
             A[i], A[j] = A[j], A[i]
+    print(A, i)
     A[i], A[p] = A[p], A[i]
     return i
+
 
 def quicksortHelper(A, p, q):
     if q - p <= 1:
